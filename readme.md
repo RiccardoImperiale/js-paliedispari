@@ -1,14 +1,18 @@
 ## Palidroma
-Chiedere all’utente di inserire una parola 
-Creare una funzione per capire se la parola inserita è palindroma
+Ask the user to enter a word
+Create a function to see if the entered word is a palindrome
 
 ## Pari e Dispari
-L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione). 
-Sommiamo i due numeri 
-Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione) 
-Dichiariamo chi ha vinto.
+The user chooses even or odd and enters a number from 1 to 5.
+We generate a random number (always 1 to 5) for the computer (using a function).
+Let's add the two numbers
+We establish whether the sum of the two numbers is even or odd (using a function)
+Let's declare who won.
 
-Consigli del giorno
-Scriviamo sempre in italiano i passaggi che vogliamo fare
-Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
+### Steps
+- user chooses ever or odd
+- user enters a number from 1 to 5
+- generate a random number from 1 to 5 for the computer (using a function)
+- add the user and the computer number
+- check if the sum of the numbers is even or odd (using a function)
+- declare who won

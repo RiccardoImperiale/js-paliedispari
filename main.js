@@ -1,5 +1,5 @@
 // ask the user to enter a word
-const userWord = prompt('Enter a word:');
+// const userWord = prompt('Enter a word:');
 /**
  * check if a word is a palindrome
  * @param {string} word 
@@ -11,5 +11,6 @@ function isPalindrome(word) {
     return word === reversedWord;
 }
 
-console.log(isPalindrome(userWord));
+// console.log(isPalindrome(userWord));
 
+// the user chooses ever or odd
