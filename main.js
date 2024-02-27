@@ -27,7 +27,7 @@ form.addEventListener('submit', (e) => {
     if (!isNumValid(userNumber)) {
         document.querySelector('#userNumber').classList.add('is-invalid');
         winText.textContent = '';
-        alert('Enter a number from 1 to 5');
+        document.querySelector('#userNumber').value = '';
     } else {
         document.querySelector('#userNumber').classList.remove('is-invalid');
         // get random pc number
@@ -45,17 +45,28 @@ form.addEventListener('submit', (e) => {
     }
 })
 
-// generate a random number from 1 to 5 for the computer
+/**
+ * generate a random number from 1 to 5
+ * @returns {number}
+ */
 function getRandNumFrom1To5() {
     return Math.floor(Math.random() * 5) + 1;
 }
 
-// check if even
+/**
+ * check if even
+ * @param {number} sum 
+ * @returns {boolean}
+ */
 function isEven(sum) {
     return sum % 2 === 0;
 }
 
-// number input validation
+/**
+ * validate the number input
+ * @param {number} userNumber 
+ * @returns {boolean}
+ */
 function isNumValid(userNumber) {
     if (userNumber < 1 || userNumber > 5) {
         return false
