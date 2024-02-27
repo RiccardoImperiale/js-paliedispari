@@ -15,6 +15,7 @@ function isPalindrome(word) {
 
 // Even or Odd --------------------------------------------------------------------->
 const form = document.querySelector('form');
+const inputNumber = document.querySelector('#userNumber');
 const winText = document.querySelector('h3');
 
 form.addEventListener('submit', (e) => {
@@ -22,14 +23,14 @@ form.addEventListener('submit', (e) => {
     // get user choice between even and odd
     const userChoice = document.querySelector('.btn-check:checked').value;
     // get user number choice 
-    const userNumber = Number(document.querySelector('#userNumber').value);
+    const userNumber = Number(inputNumber.value);
     // validate the number input before continue
     if (!isNumValid(userNumber)) {
-        document.querySelector('#userNumber').classList.add('is-invalid');
+        inputNumber.classList.add('is-invalid');
         winText.textContent = '';
-        document.querySelector('#userNumber').value = '';
+        inputNumber.value = '';
     } else {
-        document.querySelector('#userNumber').classList.remove('is-invalid');
+        inputNumber.classList.remove('is-invalid');
         // get random pc number
         let pcNumber = getRandNumFrom1To5();
         // add the user number to the computer number
