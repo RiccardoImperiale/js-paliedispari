@@ -14,25 +14,34 @@ function isPalindrome(word) {
 
 
 // Even or Odd --------------------------------------------------------------------->
+const form = document.querySelector('form');
+const winText = document.querySelector('h3');
 
-const form = document.querySelector('form')
-
-form.addEventListener('submit', function (e) {
-    e.preventDefault()
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
     // get user choice between even and odd
     const userChoice = document.querySelector('.btn-check:checked').value;
     // get user number choice 
-    const userNumber = Number(document.querySelector('#userNumber').value)
-
-    let pcNumber = getRandNumFrom1To5();
-
-    // add the user number to the computer number
-    let sum = userNumber + pcNumber;
-
-    if (isEven(sum) && userChoice === 'even' || !isEven(sum) && userChoice === 'odd') {
-        console.log('player win');
+    const userNumber = Number(document.querySelector('#userNumber').value);
+    // validate the number input before continue
+    if (!isNumValid(userNumber)) {
+        document.querySelector('#userNumber').classList.add('is-invalid');
+        winText.textContent = '';
+        alert('Enter a number from 1 to 5');
     } else {
-        console.log('computer win');
+        document.querySelector('#userNumber').classList.remove('is-invalid');
+        // get random pc number
+        let pcNumber = getRandNumFrom1To5();
+        // add the user number to the computer number
+        let sum = userNumber + pcNumber;
+        // check who won
+        if (isEven(sum) && userChoice === 'even' || !isEven(sum) && userChoice === 'odd') {
+            console.log('player win');
+            winText.textContent = 'You Win 🥳'
+        } else {
+            console.log('computer win');
+            winText.textContent = 'You Lose 🫣'
+        }
     }
 })
 
@@ -43,5 +52,13 @@ function getRandNumFrom1To5() {
 
 // check if even
 function isEven(sum) {
-    return sum % 2 === 0
+    return sum % 2 === 0;
+}
+
+// number input validation
+function isNumValid(userNumber) {
+    if (userNumber < 1 || userNumber > 5) {
+        return false
+    }
+    return true
 }
