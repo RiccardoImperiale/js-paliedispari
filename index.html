@@ -13,15 +13,16 @@
     <div class="container mt-5 w-50">
         <h1 class="text-center mb-5">Even or Odd</h1>
         <form class="text-center">
-            <select class="form-select mb-3" id="userSelect">
-                <option selected>Choose between even or odd</option>
-                <option value="even">Even</option>
-                <option value="odd">Odd</option>
-            </select>
+            <div class="d-flex mb-3">
+                <input type="radio" class="btn-check" name="option" id="even" value="even" autocomplete="off" checked>
+                <label class="btn btn-primary w-50 me-1" for="even">Even</label>       
+                <input type="radio" class="btn-check" name="option" id="odd" value="odd" autocomplete="off">
+                <label class="btn btn-primary w-50 ms-1" for="odd">Odd</label>
+            </div>
             <div class="mb-3">
                 <input type="number" class="form-control" id="userNumber" placeholder="Enter a number from 1 to 5">
             </div>
-            <button type="submit" class="btn btn-primary w-100">Enter</button>
+            <button type="submit" class="btn btn-success w-100">Enter</button>
         </form>
     </div>
 
