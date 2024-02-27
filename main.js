@@ -1,5 +1,10 @@
 // ask the user to enter a word
 const userWord = prompt('Enter a word:');
+/**
+ * check if a word is a palindrome
+ * @param {string} word 
+ * @returns {boolean}
+*/
 // create a function to see if the entered word is a palindrome
 function isPalindrome(word) {
     let reversedWord = word.split("").reverse().join("");
@@ -7,3 +12,4 @@ function isPalindrome(word) {
 }
 
 console.log(isPalindrome(userWord));
+
